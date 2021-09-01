@@ -14,7 +14,7 @@ case CAD:
     for (int counter=0; counter < 128; counter++){
                 buffer[counter] = '\0';
             };
-}} while (a != EOF);
+}} while (a != FDT);
 printf("Fin de texto:"); 
 return 0;
 }
