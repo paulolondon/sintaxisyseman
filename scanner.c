@@ -1,19 +1,23 @@
 #include "scanner.h"
-int counter=0;
+int counter2=0;
 int c;
 int get_token(){
 while((c=getchar())!=EOF){
 if(c==','){
     return SEP;}
 else if(!isspace(c)){
- while(!isspace(c)){
-    buffer[counter]=c;
-    counter++;
+ while(!isspace(c) && (c!=','))
+ {
+    buffer[counter2]=c;
+    counter2++;
+    c=getchar();
  }
- buffer[0]='\0';
- return CAD;
+    ungetc(c,stdin);            
+    buffer[counter2+1] = '\0';
+    counter2 = 0;
+    return CAD;
 }
-else if(c==EOF){
+else if((c=getchar())==EOF){
     return FDT;
 }
     }
