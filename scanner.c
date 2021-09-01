@@ -13,13 +13,14 @@ else if(!isspace(c)){
     c=getchar();
  }
     ungetc(c,stdin);            
-    buffer[counter2+1] = '\0';
+    buffer[counter2] = '\0';
     counter2 = 0;
     return CAD;
 }
-else if((c=getchar())==EOF){
+}
+if((c=getchar())==EOF){
     return FDT;
 }
-    }
+    
 return 0;    
 }
